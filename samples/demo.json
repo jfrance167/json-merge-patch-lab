@@ -1,0 +1,15 @@
+{
+  "schema": "merge-patch-lab/1",
+  "target": {
+    "outer": {
+      "a": 1,
+      "b": 2
+    },
+    "keep": 3
+  },
+  "patch": {
+    "outer": {
+      "a": 4
+    }
+  }
+}

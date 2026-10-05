@@ -1,0 +1,13 @@
+# ECC self-review
+
+Reviewed all new/adapted runtime, model callers, CLI/demo, mutation/receipt helpers, tests and original frozen reports/errors against the approved contract and ECC pinned checklist. Baseline was research-only, not a Git commit; new repository/parent Git changes are excluded. This is implementing-agent self-review, not independent review.
+
+LOW finding, merge_lab/__main__.py:11: write_checked originally compared the writer's result to length without checking type. A sink returning float3.0 for abc was accepted as complete; the focused regression failed before the fix. The current helper first requires exact int, rejecting None/bool/float, then checks count and flush. Raw before/after logs, final32 normal/-O suites and actual checked-delivery regressions are preserved. Existing prior labs were not changed under this task.
+
+Admission was reviewed for global/native exact identity before operations, all-branch validation before unsupported/merge, lexical bounds before decode, scalar/type/duplicate/numeric rules and independent alias/depth/node/text caps. No remaining hook or caller-input mutation found in the reviewed paths. Model clone/typed equality operate only on admitted private/builtin values; array contents remain literal, null/missing recursive merge equivalence is documented and deletion/changed preserve membership distinctions. Result unions cannot exceed conservative caps from admitted inputs; output amplification is measured instead.
+
+CLI/demo review covered explicit optional path presence, regular bounded metadata/read checks, exclusive output and alias preservation, integer write counts, short/flush/close failures, help handling and both failed sinks. Actual closed readers verify controlled exit2 rather than interpreter exit120. Physical partial output/hostile race limits remain. Demo reuses the primary checked CLI. Mutation helper creates only fresh isolated copies and prevents nested self-copy; receipt helper validates saved logs/source hashes and emits hashes/counts rather than matching source values.
+
+Scanner: one B105 negative-zero numeric spelling false positive, inherited from owned reviewed parser code, explained and rule-specifically annotated. It is grammar data, not authentication material. Final302-LOC runtime/demo scan has0 findings/errors and1 skipped test; no claim of an unsuppressed clean scan. Tests and trusted verification tools are outside SAST scope.
+
+Disposition:0 critical/high/medium findings;1 low finding fixed. No remaining actionable defect found after re-review/affected verification. Local coordinator review is next; no merge/deployment/publication authorization or safety/conformance guarantee follows from this verdict.
